@@ -18,7 +18,7 @@ cask "amule-remote" do
     end
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "aMule Remote.app"
