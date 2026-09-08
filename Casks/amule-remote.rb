@@ -2,10 +2,10 @@ cask "amule-remote" do
   version "1.2,17"
   sha256 "776ed47be55ccfeff8897482d30d4b0284a7a199fea83d678f182b8fbf93aa90"
 
-  url "https://github.com/sidimam/AmuleRemoteiOS/releases/download/v#{version.csv.first}-build#{version.csv.second}/aMuleRemote-macOS.dmg"
+  url "https://github.com/sidimam/AmuleRemote/releases/download/v#{version.csv.first}-build#{version.csv.second}/aMuleRemote-macOS.dmg"
   name "aMule Remote"
   desc "Remote control for an amuled (aMule) server over the EC protocol"
-  homepage "https://github.com/sidimam/AmuleRemoteiOS"
+  homepage "https://github.com/sidimam/AmuleRemote"
 
   livecheck do
     url :url
