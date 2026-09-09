@@ -16,6 +16,16 @@ brew upgrade --cask amule-remote
 
 Requires an Apple Silicon Mac running macOS 14 (Sonoma) or later.
 
+## Unraid Drive (cask)
+
+[Unraid Drive](https://github.com/sidimam/unraid-drive) puts your Unraid shares in the Finder sidebar (File Provider) with a menu bar panel — the Mac version of the iOS/iPadOS/visionOS app. The cask installs the Developer ID signed and notarized DMG from the [GitHub Releases](https://github.com/sidimam/unraid-drive/releases/latest); the Mac App Store build is the same app.
+
+```bash
+brew install --cask sidimam/tap/unraid-drive
+```
+
+After the first launch enable the extension under System Settings › General › Login Items & Extensions › File Providers. Requires macOS 14 (Sonoma) or later. It needs the unraid-gateway container (or the formula below) on the server side.
+
 ## unraid-gateway (formula)
 
 [unraid-gateway](https://github.com/sidimam/unraid-gateway) is the server side of the **Unraid Drive** iOS/iPadOS/visionOS app: a single authenticated port that serves your shares to the Files app and proxies the Unraid API. It normally runs as a Docker container on Unraid (Community Applications); this formula builds the same Go binary for a Mac or Linux box that has the shares mounted, for example a Mac mini next to the NAS.
