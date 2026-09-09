@@ -18,7 +18,7 @@ cask "unraid-drive" do
     end
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Unraid Drive.app"
 
