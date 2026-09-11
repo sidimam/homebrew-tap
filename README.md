@@ -24,7 +24,9 @@ Requires an Apple Silicon Mac running macOS 14 (Sonoma) or later.
 brew install --cask sidimam/tap/unraid-drive
 ```
 
-After the first launch enable the extension under System Settings › General › Login Items & Extensions › File Providers. Requires macOS 14 (Sonoma) or later. It needs the unraid-gateway container (or the formula below) on the server side.
+After the first launch enable the extension under System Settings › General › Login Items & Extensions › File Providers. Requires macOS 14 (Sonoma) or later.
+
+**What's new in 1.1 (build 20):** Shortcuts and Siri actions (save clipboard, upload, get, list, refresh, test connection), notifications when the gateway is unreachable or a file could not sync, walkthrough at every update with iCloud restore, app colour applied to the whole app. Full history: [Changelog](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md). It needs the unraid-gateway container (or the formula below) on the server side.
 
 ## unraid-gateway (formula)
 
