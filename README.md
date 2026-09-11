@@ -39,7 +39,7 @@ brew install sidimam/tap/unraid-gateway
 brew services start unraid-gateway
 ```
 
-**What's new in 0.6.0:** media tickets — `POST /api/v1/fs/ticket` returns a signed, expiring URL (`/media/<ticket>`) for one file, so players that cannot send headers (the mpv player of Unraid Drive on Apple TV, VLC, a browser) can stream with Range support; nothing secret in the URL. 0.5.5 brought Unraid's standard file permissions (0777/0666) and self-explaining permission errors. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
+**What's new in 0.7.0:** Activity panel in the web UI — connected devices (device, Unraid user, IP, since/last seen, last file), streams and transfers in progress with real progress and speed, recent transfers; `GET /api/v1/activity` (per-user scope, ADMIN/API-key-only see everyone). 0.6.0 added media tickets for header-less players. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
 
 
 Point `DATA_ROOT` (default `$(brew --prefix)/var/unraid-gateway/data`) at one folder per share and `UNRAID_URL` at your Unraid WebGUI; see `brew info unraid-gateway` for the caveats and the [gateway wiki](https://github.com/sidimam/unraid-gateway/wiki) for the full setup.
