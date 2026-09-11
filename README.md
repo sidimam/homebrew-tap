@@ -28,7 +28,7 @@ brew install --cask sidimam/tap/unraid-drive
 
 After the first launch enable the extension under System Settings › General › Login Items & Extensions › File Providers. Requires macOS 14 (Sonoma) or later.
 
-**What's new in 1.3 (build 29):** a Files-style explorer inside the app on every device (list/icons, sort, search, Info, new folder, upload, rename, copy/cut/paste, move, share, delete), Quick Look plus a built-in mpv player (MKV, AVI, WebM, FLAC…) and EPUB/CBZ/ZIP readers; on Apple TV also text/PDF viewers and Infuse/VLC hand-off; choose which shares to show, synced with iCloud. Full history: [Changelog](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md). It needs the unraid-gateway container (or the formula below) on the server side. Third-party software: libmpv and FFmpeg (LGPL) via MPVKit.
+**What's new in 1.3 (build 31):** Mac — fixed the crash when playing MKV, AVI and the other mpv formats (the notarized app was killed by the hardened runtime as soon as the video loaded). Build 30: restore first from iCloud on a new or reinstalled device with re-registration on the gateways, same device id after a reinstall, Apple TV shows what waits in iCloud and receives every server with one pairing code, the real reason when a video cannot stream, Rename and New folder on Apple TV. Build 29: a Files-style explorer on every device, Quick Look plus a built-in mpv player (MKV, AVI, WebM, FLAC…) and EPUB/CBZ/ZIP readers, choose which shares to show. Full history: [Changelog](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md). It needs the unraid-gateway container (or the formula below) on the server side. Third-party software: libmpv and FFmpeg (LGPL) via MPVKit.
 
 ## unraid-gateway (formula)
 
