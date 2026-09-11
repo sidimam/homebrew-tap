@@ -1,6 +1,6 @@
 cask "amule-remote" do
-  version "1.3,18"
-  sha256 "ac8079c178284df51b44e61c25e0e82f2316b0568de01f3ca7d633750bfb6b0f"
+  version "1.4,19"
+  sha256 "99b294e080c5aef6eefaf3e224e88d56d2f1504d90b12d1ff650cc6e08ba2097"
 
   url "https://github.com/sidimam/AmuleRemote/releases/download/v#{version.csv.first}-build#{version.csv.second}/aMuleRemote-macOS.dmg"
   name "aMule Remote"
