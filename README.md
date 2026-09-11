@@ -1,6 +1,6 @@
 # sidimam/homebrew-tap
 
-Homebrew tap for [aMule Remote](https://github.com/sidimam/AmuleRemote) — a native Mac / iPhone / iPad / Apple Vision Pro remote control for an `amuled` (aMule) server.
+Homebrew tap for [aMule Remote](https://github.com/sidimam/AmuleRemote) — a native Mac / iPhone / iPad / Apple Vision Pro / Apple TV remote control for an `amuled` (aMule) server.
 
 ## Install
 
@@ -15,6 +15,8 @@ brew upgrade --cask amule-remote
 ```
 
 Requires an Apple Silicon Mac running macOS 14 (Sonoma) or later.
+
+**What's new in 1.4 (build 19):** guided introduction at the first launch with iCloud backup restore of the server profiles, notifications managed from the system Settings (downloads started and completed, server unreachable, eD2k/Kad drops and reconnections), app colour applied to the whole interface, paste several eD2k links from the clipboard (*Add links from the Clipboard* in the Dock and Transfers menus) and share eD2k links. Shortcuts and Siri actions are part of the Mac App Store build. Full history: [Changelog](https://github.com/sidimam/AmuleRemote/blob/main/CHANGELOG.md). iPhone/iPad, Mac App Store, Apple Vision Pro and Apple TV: [App Store](https://apps.apple.com/app/amule-remote/id6800020841).
 
 ## Unraid Drive (cask)
 
