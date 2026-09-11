@@ -28,7 +28,7 @@ brew install --cask sidimam/tap/unraid-drive
 
 After the first launch enable the extension under System Settings › General › Login Items & Extensions › File Providers. Requires macOS 14 (Sonoma) or later.
 
-**What's new in 1.2 (build 22):** choose which shares to show (after connecting, in the walkthrough, in Settings and per server; Files, Finder, Shortcuts and Apple TV honour it, the choice syncs with iCloud); permission errors carry the gateway's explanation (unraid-gateway 0.5.5+). 1.1 brought Shortcuts and Siri actions, notifications, the walkthrough with iCloud restore, app colour and the Apple TV app. Full history: [Changelog](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md). It needs the unraid-gateway container (or the formula below) on the server side.
+**What's new in 1.2 (build 23):** choose which shares to show (after connecting, in the walkthrough, in Settings and per server; Files, Finder, Shortcuts and Apple TV honour it, the choice syncs with iCloud); permission errors carry the gateway's explanation (unraid-gateway 0.5.5+). 1.1 brought Shortcuts and Siri actions, notifications, the walkthrough with iCloud restore, app colour and the Apple TV app. Full history: [Changelog](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md). It needs the unraid-gateway container (or the formula below) on the server side.
 
 ## unraid-gateway (formula)
 
