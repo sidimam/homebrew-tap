@@ -39,7 +39,7 @@ brew install sidimam/tap/unraid-gateway
 brew services start unraid-gateway
 ```
 
-**What's new in 0.5.5:** files and folders created through the gateway get Unraid's standard permissions (nobody:users, 0777/0666, as Tools › New Permissions); "permission denied" errors now name the folder, its owner and mode and the fix; start-up warns about shares the gateway cannot write to. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
+**What's new in 0.6.0:** media tickets — `POST /api/v1/fs/ticket` returns a signed, expiring URL (`/media/<ticket>`) for one file, so players that cannot send headers (the mpv player of Unraid Drive on Apple TV, VLC, a browser) can stream with Range support; nothing secret in the URL. 0.5.5 brought Unraid's standard file permissions (0777/0666) and self-explaining permission errors. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
 
 
 Point `DATA_ROOT` (default `$(brew --prefix)/var/unraid-gateway/data`) at one folder per share and `UNRAID_URL` at your Unraid WebGUI; see `brew info unraid-gateway` for the caveats and the [gateway wiki](https://github.com/sidimam/unraid-gateway/wiki) for the full setup.
