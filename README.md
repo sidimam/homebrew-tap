@@ -39,7 +39,7 @@ brew install sidimam/tap/unraid-gateway
 brew services start unraid-gateway
 ```
 
-**What's new in 0.9.0:** device registry (revoke a lost phone from the web UI or `gw devices rm`), notifications for new/removed devices via Unraid, e-mail (SMTP) and Telegram, Unraid API key management and rotation from the web UI (ADMIN key), web UI one-click login with a remembered key, Activity panel, `gw activity`, console walkthrough. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
+**What's new in 0.10.0:** web UI redesigned — dashboard counters and tabs (Files, Activity, Devices, Notifications, API keys, Advanced), readable tables, theme system/light/dark, seven languages, a login that password managers (iCloud Keychain, Chrome, Firefox) save and fill. 0.9.x: device registry (revoke a lost phone from the web UI or `gw devices rm`), notifications for new/removed devices via Unraid, e-mail (SMTP) and Telegram, Unraid API key management and rotation from the web UI (ADMIN key), web UI one-click login with a remembered key, Activity panel, `gw activity`, console walkthrough. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
 
 
 Point `DATA_ROOT` (default `$(brew --prefix)/var/unraid-gateway/data`) at one folder per share and `UNRAID_URL` at your Unraid WebGUI; see `brew info unraid-gateway` for the caveats and the [gateway wiki](https://github.com/sidimam/unraid-gateway/wiki) for the full setup.
