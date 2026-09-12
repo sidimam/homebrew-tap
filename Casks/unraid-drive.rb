@@ -22,6 +22,15 @@ cask "unraid-drive" do
 
   app "Unraid Drive.app"
 
+  # Quit the running app (and with it the File Provider extension) before the bundle is replaced:
+  # swapping the bundle under a running extension leaves the Finder location in an error state.
+  uninstall quit: "com.sdimambro.unraid-drive"
+
+  # Relaunch after the upgrade: the app checks the gateway and rebuilds its Finder locations by itself.
+  postflight do
+    system_command "/usr/bin/open", args: ["-a", "#{appdir}/Unraid Drive.app"]
+  end
+
   caveats <<~EOS
     After the first launch enable the extension under
     System Settings › General › Login Items & Extensions › File Providers → Unraid Drive.
