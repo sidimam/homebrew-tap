@@ -27,8 +27,10 @@ cask "unraid-drive" do
   uninstall quit: "com.sdimambro.unraid-drive"
 
   # Relaunch after the upgrade: the app checks the gateway and rebuilds its Finder locations by itself.
-  postflight_steps do
-    run "/usr/bin/open", args: ["-a", "{{appdir}}/Unraid Drive.app"], must_succeed: false
+  # Kept as a legacy block on purpose: Homebrew 7's `postflight_steps` run in a sandbox that denies
+  # launching apps (lsopen, Apple events and launchd are all blocked), so `open` fails there.
+  postflight do
+    system_command "/usr/bin/open", args: ["-a", "#{appdir}/Unraid Drive.app"]
   end
 
   caveats <<~EOS
