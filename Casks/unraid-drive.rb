@@ -27,8 +27,8 @@ cask "unraid-drive" do
   uninstall quit: "com.sdimambro.unraid-drive"
 
   # Relaunch after the upgrade: the app checks the gateway and rebuilds its Finder locations by itself.
-  postflight do
-    system_command "/usr/bin/open", args: ["-a", "#{appdir}/Unraid Drive.app"]
+  postflight_steps do
+    run "/usr/bin/open", args: ["-a", "{{appdir}}/Unraid Drive.app"], must_succeed: false
   end
 
   caveats <<~EOS
