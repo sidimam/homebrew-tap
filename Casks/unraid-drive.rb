@@ -26,15 +26,9 @@ cask "unraid-drive" do
   # swapping the bundle under a running extension leaves the Finder location in an error state.
   uninstall quit: "com.sdimambro.unraid-drive"
 
-  # Relaunch after the upgrade: the app checks the gateway and rebuilds its Finder locations by itself.
-  # Kept as a legacy block on purpose: Homebrew 7's `postflight_steps` run in a sandbox that denies
-  # launching apps (lsopen, Apple events and launchd are all blocked), so `open` fails there.
-  postflight do
-    system_command "/usr/bin/open", args: ["-a", "#{appdir}/Unraid Drive.app"]
-  end
-
   caveats <<~EOS
-    After the first launch enable the extension under
+    The app is quit for the upgrade: open Unraid Drive again afterwards (it checks the gateway
+    and rebuilds its Finder locations by itself). After the first launch enable the extension under
     System Settings › General › Login Items & Extensions › File Providers → Unraid Drive.
     The server side is the unraid-gateway container (or `brew install sidimam/tap/unraid-gateway`).
   EOS
