@@ -44,5 +44,5 @@ brew services start unraid-gateway
 
 Point `DATA_ROOT` (default `$(brew --prefix)/var/unraid-gateway/data`) at one folder per share and `UNRAID_URL` at your Unraid WebGUI; see `brew info unraid-gateway` for the caveats and the [gateway wiki](https://github.com/sidimam/unraid-gateway/wiki) for the full setup.
 
-**1.3 build 37 (15 Sep 2026):** self-healing device registration, secrets never deleted by the app, honest Files/Finder location status with the right remedy when the extension is switched off, iCloud rows always visible, Diagnostics and rotating log (Settings › Support), Apple TV icon-only header, Mac login item, Xcode 27 SDK look. `brew upgrade --cask unraid-drive`.
+**1.3.1 build 38 (15 Sep 2026):** self-healing device registration, secrets never deleted by the app, honest Files/Finder location status with the right remedy when the extension is switched off, iCloud rows always visible, Diagnostics and rotating log (Settings › Support), Apple TV icon-only header, Mac login item, Xcode 27 SDK look. `brew upgrade --cask unraid-drive`. (Published briefly as 1.3 build 37; renumbered because the Mac App Store approved 1.3 the same day.)
 
