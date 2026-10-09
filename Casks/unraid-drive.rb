@@ -1,6 +1,6 @@
 cask "unraid-drive" do
-  version "1.4,42"
-  sha256 "9188d6a4d6f05f0460b0e6a5ba566b00aa0e2163a2c8009e6bdbc455a8a90b3c"
+  version "1.4.1,43"
+  sha256 "ce934af511d6a91a90552c98d9c568d1ecca92bcff52aadba08830be834840c6"
 
   url "https://github.com/sidimam/unraid-drive/releases/download/v#{version.csv.first}-build#{version.csv.second}/Unraid-Drive-macOS.dmg"
   name "Unraid Drive"
