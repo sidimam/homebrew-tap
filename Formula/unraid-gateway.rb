@@ -1,8 +1,8 @@
 class UnraidGateway < Formula
   desc "Authenticated file API and Unraid GraphQL proxy for the Unraid Drive app"
   homepage "https://github.com/sidimam/unraid-gateway"
-  url "https://github.com/sidimam/unraid-gateway/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "afa8bdb10038d74d130bbfc57832c839b0646b6d3f2f67dce60f75b957c68d83"
+  url "https://github.com/sidimam/unraid-gateway/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "5e15fbfefad683fdfdec9e4ed7495976d035fff337c2c2eb45439cc0bb132e11"
   license "MIT"
   head "https://github.com/sidimam/unraid-gateway.git", branch: "main"
 
