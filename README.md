@@ -1,48 +1,15 @@
 # sidimam/homebrew-tap
 
-Homebrew tap for [aMule Remote](https://github.com/sidimam/AmuleRemote) — a native Mac / iPhone / iPad / Apple Vision Pro / Apple TV remote control for an `amuled` (aMule) server.
+Homebrew tap for the Mac builds of [aMule Remote](https://github.com/sidimam/AmuleRemote) and [Unraid Drive](https://github.com/sidimam/unraid-drive), and for [unraid-gateway](https://github.com/sidimam/unraid-gateway), the server side of Unraid Drive. The casks install the same **Developer ID signed and notarized** DMGs published in each project's GitHub Releases; the formula builds the gateway from its tagged source.
 
-## Install
+| Package | Type | Version | Install |
+|---|---|---|---|
+| [aMule Remote](https://github.com/sidimam/homebrew-tap/wiki/aMule-Remote) — remote control for an aMule (`amuled`) server | cask | 1.5.1 (build 27) | `brew install --cask sidimam/tap/amule-remote` |
+| [Unraid Drive](https://github.com/sidimam/homebrew-tap/wiki/Unraid-Drive) — Unraid shares in the Finder sidebar, menu bar panel | cask | 1.5.4 (build 49) | `brew install --cask sidimam/tap/unraid-drive` |
+| [unraid-gateway](https://github.com/sidimam/homebrew-tap/wiki/unraid-gateway) — authenticated file API and Unraid API proxy | formula | 0.18.0 | `brew install sidimam/tap/unraid-gateway` |
 
-```bash
-brew install --cask sidimam/tap/amule-remote
-```
+Update with `brew update && brew upgrade`. Requirements: macOS 14 Sonoma or later for both apps (aMule Remote: Apple Silicon only; Unraid Drive: Apple Silicon or Intel). After installing Unraid Drive enable its extension under System Settings › General › Login Items & Extensions › File Providers.
 
-The cask installs the same **Developer ID signed and notarized** DMG published in the [GitHub Releases](https://github.com/sidimam/AmuleRemote/releases/latest) into `/Applications`. Update with:
+The gateway runs as a service: write `UNRAID_URL=http://<unraid-ip>` in `$(brew --prefix)/etc/unraid-gateway/env`, link the shares under `$(brew --prefix)/var/unraid-gateway/data`, then `brew services start unraid-gateway` (web UI on port 8484). On Unraid itself use the Docker container instead.
 
-```bash
-brew upgrade --cask amule-remote
-```
-
-Requires an Apple Silicon Mac running macOS 14 (Sonoma) or later.
-
-**What's new in 1.5.1 (build 27):** much lower CPU use when the app sits idle (the interface is refreshed only when the server data changes, search results are sorted only when they change, the refresh slows down when no window is visible) and the server password stored in the profile, synced through iCloud with the profiles (passwords from earlier versions are imported automatically). **1.5 (build 26):** hinge-aware layouts for the iPhone Duo and a two-column layout on iPad, server lists (curated server.met sources and custom URLs with preview and import), Continuity (Handoff and “Continue the search” across devices), iCloud backup of the app settings, walkthrough only on a fresh installation; the Share Extension, the Control Center controls and the Speed widget ship with the App Store builds. 1.4.4: Liquid Glass app icon (Icon Composer document, translucent mule over the colored background, all seven app colors, automatic dark/clear/tinted variants on macOS 26+, iOS 26+ and watchOS 26+) and layouts reviewed for the iPhone Duo. 1.4.3 was a maintenance release built with Xcode 27 and the 27.0 SDKs (ephemeral notification permission state, Swift 6 hardening). 1.4.2 makes «Restore from iCloud» selectable with the Siri Remote and lets the password field open the keyboard on Apple TV, anchors the Download and Connect dialogs to the tapped row on iPhone/iPad/Vision Pro and follows the device text size everywhere. 1.4.1 fixes the Apple TV build (iCloud entitlements were missing, so sync never worked on tvOS), makes the walkthrough's iCloud backup search more patient and draws real color dots in the Apple TV color picker. What's new in 1.4: guided introduction at the first launch with iCloud backup restore of the server profiles, notifications managed from the system Settings (downloads started and completed, server unreachable, eD2k/Kad drops and reconnections), app colour applied to the whole interface, paste several eD2k links from the clipboard (*Add links from the Clipboard* in the Dock and Transfers menus) and share eD2k links. Shortcuts and Siri actions are part of the Mac App Store build. Full history: [Changelog](https://github.com/sidimam/AmuleRemote/blob/main/CHANGELOG.md). iPhone/iPad, Mac App Store, Apple Vision Pro and Apple TV: [App Store](https://apps.apple.com/app/amule-remote/id6800020841).
-
-## Unraid Drive (cask)
-
-[Unraid Drive](https://github.com/sidimam/unraid-drive) puts your Unraid shares in the Finder sidebar (File Provider) with a menu bar panel — the Mac version of the iOS/iPadOS/visionOS app. The cask installs the Developer ID signed and notarized DMG from the [GitHub Releases](https://github.com/sidimam/unraid-drive/releases/latest); the Mac App Store build is the same app.
-
-```bash
-brew install --cask sidimam/tap/unraid-drive
-```
-
-After the first launch enable the extension under System Settings › General › Login Items & Extensions › File Providers. Requires macOS 14 (Sonoma) or later.
-
-**What's new in 1.3 (build 36):** a server opens its shares directly on every device, with a gear for its settings; share roots are not selectable; the Apple TV dashboard shows the gateway container. Build 35: transient network errors (connection refused, a dead VPN interface, a Wi-Fi hand-over) are retried before the Finder sees them. Build 34: the Files / Finder location is checked and rebuilt automatically on the first launch and after every update (the cask now quits the app before upgrading and relaunches it). Build 33: multi-selection in the explorer on every device (Copy, Cut, Move…, Copy to…, Download, Share…, Delete on the whole selection), *Download* of files and folders, and on the Mac *Start without a window* (menu bar only, or menu bar + Dock). Build 32: Move… and Copy to… confirm the destination with a fixed *Move here* / *Copy here* button (on the Mac the confirmation was unreachable); one *Open* entry for every file. Build 31: Mac — fixed the crash when playing MKV, AVI and the other mpv formats (the notarized app was killed by the hardened runtime as soon as the video loaded). Build 30: restore first from iCloud on a new or reinstalled device with re-registration on the gateways, same device id after a reinstall, Apple TV shows what waits in iCloud and receives every server with one pairing code, the real reason when a video cannot stream, Rename and New folder on Apple TV. Build 29: a Files-style explorer on every device, Quick Look plus a built-in mpv player (MKV, AVI, WebM, FLAC…) and EPUB/CBZ/ZIP readers, choose which shares to show. Full history: [Changelog](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md). It needs the unraid-gateway container (or the formula below) on the server side. Third-party software: libmpv and FFmpeg (LGPL) via MPVKit.
-
-## unraid-gateway (formula)
-
-[unraid-gateway](https://github.com/sidimam/unraid-gateway) is the server side of the **Unraid Drive** iOS/iPadOS/visionOS app: a single authenticated port that serves your shares to the Files app and proxies the Unraid API. It normally runs as a Docker container on Unraid (Community Applications); this formula builds the same Go binary for a Mac or Linux box that has the shares mounted, for example a Mac mini next to the NAS.
-
-```bash
-brew install sidimam/tap/unraid-gateway
-brew services start unraid-gateway
-```
-
-**What's new in 0.11.0:** Unraid notifications out of the box — map /tmp/notifications to /unraid-notifications and the gateway raises them with any key role (no ADMIN key). 0.10.0: web UI redesigned — dashboard counters and tabs (Files, Activity, Devices, Notifications, API keys, Advanced), readable tables, theme system/light/dark, seven languages, a login that password managers (iCloud Keychain, Chrome, Firefox) save and fill. 0.9.x: device registry (revoke a lost phone from the web UI or `gw devices rm`), notifications for new/removed devices via Unraid, e-mail (SMTP) and Telegram, Unraid API key management and rotation from the web UI (ADMIN key), web UI one-click login with a remembered key, Activity panel, `gw activity`, console walkthrough. Full history: [Changelog](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
-
-
-Point `DATA_ROOT` (default `$(brew --prefix)/var/unraid-gateway/data`) at one folder per share and `UNRAID_URL` at your Unraid WebGUI; see `brew info unraid-gateway` for the caveats and the [gateway wiki](https://github.com/sidimam/unraid-gateway/wiki) for the full setup.
-
-**1.3.1 build 40 (15 Sep 2026):** self-healing device registration, secrets never deleted by the app, honest Files/Finder location status with the right remedy when the extension is switched off, iCloud rows always visible, Diagnostics and rotating log (Settings › Support), Apple TV icon-only header, Mac login item, Xcode 27 SDK look. `brew upgrade --cask unraid-drive`. (Published briefly as 1.3 build 37; renumbered because the Mac App Store approved 1.3 the same day.)
-
+**Documentation: [wiki](https://github.com/sidimam/homebrew-tap/wiki)** — one page per package, [Troubleshooting](https://github.com/sidimam/homebrew-tap/wiki/Troubleshooting) and [Maintainer notes](https://github.com/sidimam/homebrew-tap/wiki/Maintainer-notes). What's new in each release: the changelogs of [aMule Remote](https://github.com/sidimam/AmuleRemote/blob/main/CHANGELOG.md), [Unraid Drive](https://github.com/sidimam/unraid-drive/blob/main/CHANGELOG.md) and [unraid-gateway](https://github.com/sidimam/unraid-gateway/wiki/Changelog).
