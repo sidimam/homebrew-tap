@@ -6,7 +6,7 @@ Homebrew tap for the Mac builds of [aMule Remote](https://github.com/sidimam/Amu
 |---|---|---|---|
 | [aMule Remote](https://github.com/sidimam/homebrew-tap/wiki/aMule-Remote) — remote control for an aMule (`amuled`) server | cask | 1.5.1 (build 27) | `brew install --cask sidimam/tap/amule-remote` |
 | [Unraid Drive](https://github.com/sidimam/homebrew-tap/wiki/Unraid-Drive) — Unraid shares in the Finder sidebar, menu bar panel | cask | 1.5.4 (build 49) | `brew install --cask sidimam/tap/unraid-drive` |
-| [unraid-gateway](https://github.com/sidimam/homebrew-tap/wiki/unraid-gateway) — authenticated file API and Unraid API proxy | formula | 0.18.0 | `brew install sidimam/tap/unraid-gateway` |
+| [unraid-gateway](https://github.com/sidimam/homebrew-tap/wiki/unraid-gateway) — authenticated file API and Unraid API proxy | formula | 0.18.1 | `brew install sidimam/tap/unraid-gateway` |
 
 Update with `brew update && brew upgrade`. Requirements: macOS 14 Sonoma or later for both apps (aMule Remote: Apple Silicon only; Unraid Drive: Apple Silicon or Intel). After installing Unraid Drive enable its extension under System Settings › General › Login Items & Extensions › File Providers.
 
